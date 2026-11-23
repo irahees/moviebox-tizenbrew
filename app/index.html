@@ -4,34 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="color-scheme" content="dark">
-  <title>MovieBox TV</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>MovieBox HD</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#080a10;color:#fff;font-family:Arial,Helvetica,sans-serif}
+    body{display:grid;place-items:center;text-align:center;padding:28px}
+    main{max-width:720px}h1{font-size:clamp(32px,5vw,58px);margin:0 0 14px}p{color:#b8c0cf;font-size:20px;line-height:1.5}
+    a{display:inline-block;margin-top:22px;padding:17px 30px;border-radius:10px;background:#e9b94e;color:#15120a;text-decoration:none;font-weight:800;font-size:20px}
+    small{display:block;margin-top:24px;color:#788397}
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded',function(){
+      var target='https://movieboxhd.net/';
+      document.getElementById('open').href=target;
+      // Navigate directly; the link remains as a fallback for TV browsers that block scripted navigation.
+      window.location.replace(target);
+    });
+  </script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-mark">M</span><span>MovieBox</span><small>TV</small></div>
-    <nav id="tabs" aria-label="Main navigation">
-      <button class="tab active" data-tab="home">Home</button>
-      <button class="tab" data-tab="movies">Movies</button>
-      <button class="tab" data-tab="series">Series</button>
-      <button class="tab" data-tab="mylist">My List</button>
-    </nav>
-    <button id="searchToggle" class="icon-btn" aria-label="Search">⌕</button>
-  </header>
   <main>
-    <section id="hero" class="hero">
-      <div class="hero-copy"><p class="eyebrow">YOUR SCREEN. YOUR LIBRARY.</p><h1 id="heroTitle">Your movies, one place.</h1><p id="heroDesc">Connect a catalogue you are authorized to use.</p><div class="hero-actions"><button id="heroBrowse" class="primary">Explore library</button><button id="setupBtn" class="secondary">Connect catalogue</button></div></div>
-      <div class="hero-art"><div class="art-orbit"></div><div class="art-card"><span>MB</span><b>STREAM<br>YOUR WAY</b></div></div>
-    </section>
-    <section id="searchPanel" class="search-panel hidden"><input id="searchInput" type="search" placeholder="Search movies and series…"><button id="clearSearch">Clear</button></section>
-    <section class="shelf-head"><div><p class="eyebrow">DISCOVER</p><h2 id="sectionTitle">Featured titles</h2></div><span id="count" class="count"></span></section>
-    <div id="filters" class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="movie">Movies</button><button class="filter" data-filter="series">Series</button></div>
-    <section id="grid" class="grid" aria-live="polite"></section>
-    <section class="connect-card"><div><h3>Bring your own catalogue</h3><p>Load a JSON catalogue URL containing titles and direct playback URLs from your own media server or licensed provider.</p></div><button id="connectBottom" class="secondary">Set up</button></section>
+    <h1>MovieBox HD</h1>
+    <p>Opening MovieBox HD…</p>
+    <a id="open" href="https://movieboxhd.net/">Open MovieBox HD</a>
+    <small>If the page does not open automatically, select the button with your TV remote.</small>
   </main>
-  <dialog id="details"><button class="close" id="closeDetails" aria-label="Close">×</button><div id="detailBody"></div></dialog>
-  <dialog id="settings"><button class="close" id="closeSettings" aria-label="Close">×</button><h2>Connect your catalogue</h2><p class="muted">Paste the HTTPS URL of a JSON catalogue you own or are authorized to access. No account password is requested or stored.</p><label for="catalogUrl">Catalogue URL</label><input id="catalogUrl" type="url" placeholder="https://example.com/catalog.json"><div class="dialog-actions"><button id="loadCatalog" class="primary">Load catalogue</button><button id="useDemo" class="secondary">Use demo library</button></div><p id="settingsStatus" class="status"></p><p class="hint">Expected JSON: an array of items with title, type (movie/series), optional year, poster, description, and url. Stream URLs must be directly playable and authorized.</p></dialog>
-  <div id="toast" class="toast" role="status"></div>
-  <script src="app.js"></script>
 </body>
 </html>
