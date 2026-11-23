@@ -1,0 +1,10 @@
+{
+  "name": "moviebox-tizenbrew",
+  "version": "0.1.0",
+  "description": "A TV-remote-friendly streaming library frontend for TizenBrew. Uses only catalogues and streams the user is authorized to access.",
+  "packageType": "app",
+  "appName": "MovieBox TV",
+  "appPath": "app/index.html",
+  "evaluateScriptOnDocumentStart": false,
+  "keys": ["MediaPlay", "MediaPause", "MediaPlayPause", "MediaStop", "MediaFastForward", "MediaRewind"]
+}
