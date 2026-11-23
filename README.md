@@ -1,6 +1,6 @@
-# MovieBox TV — TizenBrew application module
+# MovieBox HD — TizenBrew website launcher
 
-An original, remote-friendly streaming-library interface for Samsung Tizen TVs running TizenBrew. This is an application module, not an Android APK or standalone .wgt.
+This TizenBrew application module opens the MovieBox HD website at https://movieboxhd.net/ in the TV's web runtime. It is a website launcher, not an Android APK conversion and not a native Tizen streaming client.
 
 ## Add to TizenBrew
 
@@ -8,29 +8,19 @@ Open TizenBrew → Module Manager → Add GitHub Module and enter:
 
 `gh/irahees/moviebox-tizenbrew@main`
 
-## Catalogue format
+Then return to TizenBrew Home and launch **MovieBox HD**.
 
-In the app choose **Connect catalogue** and enter an HTTPS URL returning a JSON array:
+## Termux note
 
-```json
-[
-  {
-    "title": "My Film",
-    "type": "movie",
-    "year": 2025,
-    "genre": "Drama",
-    "description": "A film in my own library",
-    "poster": "https://example.com/poster.jpg",
-    "url": "https://example.com/authorized-playback.mp4"
-  }
-]
-```
+Termux can run the TizenBrew Installer service on your Android phone, but it does not convert an Android APK into a Tizen app. If the installer service is running, open:
 
-The type can be movie or series. Poster, year, genre, description and url are optional. Playback depends on the TV browser's supported media formats and the provider's authorization and network settings. Use only streams you are authorized to access.
+`http://localhost:8091/ui/dist/index.html`
 
-## Notes
+Use the installer UI to manage TizenBrew; the module itself is added from TizenBrew's Module Manager on the TV.
 
-- Sample titles are placeholders only.
-- The catalogue URL must be reachable from the TV.
-- Do not put passwords or private tokens in a public catalogue or repository.
-- This module does not install Android APKs, include pirated streams, scrape third-party services, or bypass DRM.
+## Limitations
+
+- The module only opens the website. Website compatibility, sign-in, playback, ads, and remote-control behavior depend on the website and the TV's built-in browser.
+- It does not extract video streams, bypass DRM, or provide access to content you are not authorized to watch.
+- The website's own content and service terms apply. This community module is not affiliated with MovieBox.
+- A Samsung Tizen TV cannot directly install an Android APK.
